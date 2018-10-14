@@ -7,9 +7,12 @@ public class Sum {
     private double a;
     private double b;
 
-    public Sum(){};
+    public Sum(){
+        System.out.println("===== Zad.1 =====");
+    }
 
     public Sum(double a, double b){
+        System.out.println("===== Zad.1 =====");
         this.a = a;
         this.b = b;
     }
