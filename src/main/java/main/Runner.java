@@ -5,30 +5,53 @@ import zad_2.SumOfMultiples;
 import zad_4.StringInvertion;
 import zad_5.Average;
 
+import java.util.Scanner;
+
 public class Runner {
     public static void main(String[] args) {
-//        1.
-//        zad1();
-//        2.
-//        zad2();
-//        3.
-//        zad3();
-//        4.
-//        zad4();
-//        5.
-        zad5();
-//        6.
-//        7.
-//        8.
-//        9.
-//        10.
-//        11.
-//        12.
-//        13.
-//        14.
-//        15.
-//        16.
-//        17.
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj numer zadania: ");
+        int numberOfExcersise = scanner.nextInt();
+
+        switch (numberOfExcersise) {
+            case 1:
+                zad1();
+                break;
+            case 2:
+                zad2();
+                break;
+            case 3:
+                zad3();
+                break;
+            case 4:
+                zad4();
+                break;
+            case 5:
+                zad5();
+                break;
+            case 6:
+                zad6();
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+        }
     }
 
     public static void zad1() {
@@ -50,12 +73,16 @@ public class Runner {
 
     public static void zad4() {
         StringInvertion stringInvertion = new StringInvertion();
-        System.out.println("Odp. zad4: "+stringInvertion.executeStringInvertion());
+        System.out.println("Odp. zad4: " + stringInvertion.executeStringInvertion());
     }
 
-    private static void zad5() {
+    public static void zad5() {
         Average average = new Average();
         System.out.println("Odp. zad 5: " + average.calcAverage());
+    }
+
+    public static void zad6() {
+
     }
 
 }
