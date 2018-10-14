@@ -3,6 +3,7 @@ package main;
 import zad_1.Sum;
 import zad_2.SumOfMultiples;
 import zad_4.StringInvertion;
+import zad_5.Average;
 
 public class Runner {
     public static void main(String[] args) {
@@ -13,9 +14,9 @@ public class Runner {
 //        3.
 //        zad3();
 //        4.
-        zad4();
+//        zad4();
 //        5.
-//        zad5();
+        zad5();
 //        6.
 //        7.
 //        8.
@@ -53,6 +54,8 @@ public class Runner {
     }
 
     private static void zad5() {
+        Average average = new Average();
+        System.out.println("Odp. zad 5: " + average.calcAverage());
     }
 
 }

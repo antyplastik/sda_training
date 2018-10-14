@@ -20,7 +20,7 @@ public class SumOfMultiples {
         for (int i = 0; i < 3; i++) {
 
             if (i == 0) {
-                System.out.println("Podaj liczbe n: ");
+                System.out.print("Podaj liczbe n: ");
                 this.n = scanner.nextDouble();
             } else if (i == 1) {
                 System.out.print("Podaj pierwsza liczbe: ");
@@ -35,10 +35,10 @@ public class SumOfMultiples {
     public double calcSumOfMultiples() {
         double sum = 0;
         for (int i = 0; i < this.n; i++) {
-            if ((this.n % this.a) <= this.n)
+            if ((this.n % this.a) == 0)
                 sum = this.n % this.a + sum;
 
-            if ((this.n % this.b) <= this.n)
+            if ((this.n % this.b) == 0)
                 sum = this.n % this.b + sum;
         }
         return sum;
