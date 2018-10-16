@@ -17,7 +17,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 3;
+        int numberOfExcersise = 8;
 
         switch (numberOfExcersise) {
             case 1:
@@ -42,6 +42,7 @@ public class Runner {
                 zad7();
                 break;
             case 8:
+                zad8();
                 break;
             case 9:
                 break;
@@ -96,6 +97,10 @@ public class Runner {
 
     private static void zad7() {
         StringToUpperCase string = new StringToUpperCase();
+    }
+
+    private static void zad8() {
+
     }
 
 }
