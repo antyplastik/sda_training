@@ -2,6 +2,7 @@ package main;
 
 import zad_1.Sum;
 import zad_2.SumOfMultiples;
+import zad_3.Strong;
 import zad_4.StringInvertion;
 import zad_5.Average;
 import zad_6.Adult;
@@ -16,7 +17,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 7;
+        int numberOfExcersise = 3;
 
         switch (numberOfExcersise) {
             case 1:
@@ -74,7 +75,7 @@ public class Runner {
     }
 
     public static void zad3() {
-
+        Strong strong = new Strong(3);
     }
 
     public static void zad4() {
