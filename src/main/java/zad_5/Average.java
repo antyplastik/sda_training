@@ -8,6 +8,7 @@ public class Average {
     double sumOfNumbers;
 
     public Average() {
+        System.out.println("===== Zad.5 =====");
         Scanner scanner = new Scanner(System.in);
 
         this.numberOfNumber = 1;

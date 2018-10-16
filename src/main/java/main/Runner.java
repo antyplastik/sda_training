@@ -4,15 +4,19 @@ import zad_1.Sum;
 import zad_2.SumOfMultiples;
 import zad_4.StringInvertion;
 import zad_5.Average;
+import zad_6.Adult;
+import zad_7.StringToUpperCase;
 
 import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj numer zadania: ");
-        int numberOfExcersise = scanner.nextInt();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Podaj numer zadania: ");
+//        int numberOfExcersise = scanner.nextInt();
+
+        int numberOfExcersise = 7;
 
         switch (numberOfExcersise) {
             case 1:
@@ -34,6 +38,7 @@ public class Runner {
                 zad6();
                 break;
             case 7:
+                zad7();
                 break;
             case 8:
                 break;
@@ -53,6 +58,7 @@ public class Runner {
                 break;
         }
     }
+
 
     public static void zad1() {
         Sum sum = new Sum();
@@ -82,7 +88,13 @@ public class Runner {
     }
 
     public static void zad6() {
+        Adult adult = new Adult();
+        System.out.println("Odp. zad 6: "+ adult.isAdult());
 
+    }
+
+    private static void zad7() {
+        StringToUpperCase string = new StringToUpperCase();
     }
 
 }
