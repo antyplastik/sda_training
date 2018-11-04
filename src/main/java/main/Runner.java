@@ -3,6 +3,7 @@ package main;
 import Zad_10.Polidrome;
 import zad_1.Sum;
 import zad_11.Fibonacci;
+import zad_12.NumberConverter;
 import zad_2.SumOfMultiples;
 import zad_3.Strong;
 import zad_4.StringInvertion;
@@ -19,7 +20,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 10;
+        int numberOfExcersise = 12;
 
         switch (numberOfExcersise) {
             case 1:
@@ -56,6 +57,7 @@ public class Runner {
                 zad11();
                 break;
             case 12:
+                zad12();
                 break;
             case 13:
                 break;
@@ -137,6 +139,11 @@ public class Runner {
         System.out.println("Sum of "+ fibonacciSequence.getNumberOfValues() + " elements is: " + fibonacciSequence.sumOfAllNumbers());
         fibonacciSequence.printSequence(fibonacciSequence.getFirst4NumbersFromFibonacciArray());
         System.out.println("Sum of last 5 elements (or less) higher than 2: " + fibonacciSequence.getSumOfLast5numbersHigherThan2());
+    }
+
+    private static void zad12(){
+        NumberConverter numberConverter = new NumberConverter();
+        System.out.println(numberConverter.binaryConversionToString(numberConverter.getValueFromUser()));
     }
 
 }
