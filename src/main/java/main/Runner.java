@@ -1,14 +1,15 @@
 package main;
 
 import zad_1.Sum;
+import zad_11.Fibonacci;
 import zad_2.SumOfMultiples;
 import zad_3.Strong;
 import zad_4.StringInvertion;
 import zad_5.Average;
 import zad_6.Adult;
 import zad_7.StringToUpperCase;
-
-import java.util.Scanner;
+import zad_8.Args;
+import zad_9.Square;
 
 public class Runner {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 8;
+        int numberOfExcersise = 9;
 
         switch (numberOfExcersise) {
             case 1:
@@ -45,10 +46,12 @@ public class Runner {
                 zad8();
                 break;
             case 9:
+                zad9();
                 break;
             case 10:
                 break;
             case 11:
+                zad11();
                 break;
             case 12:
                 break;
@@ -100,7 +103,32 @@ public class Runner {
     }
 
     private static void zad8() {
+        Args args = new Args();
+//        args.parseArgString(args.getInputStringFromUser());
+        args.parseArgString("1 2 3 4 5 6 7");
+        args.printInputString();
+    }
 
+    private static void zad9(){
+        Square square = new Square();
+        square.printSquareToConsole(square.generateSquare(false));
+    }
+
+    private static void zad11() {
+        Fibonacci fibonacciSequence = new Fibonacci();
+        fibonacciSequence.getNumberOfValuesFromUser();
+        fibonacciSequence.SilentMode(true);
+        fibonacciSequence.ShowDependencies(false);
+        TimeMeasurement time = new TimeMeasurement();
+        fibonacciSequence.calcFibonacciSequence();
+        System.out.println("Fibonacci sequence calc: "+time.getAformattedTime());
+        fibonacciSequence.printFibonacciSequence();
+        fibonacciSequence.printSequence(fibonacciSequence.reverseFibonacciSequence());
+        fibonacciSequence.printSequence(fibonacciSequence.oddNumbersOfFibonacciSequence());
+        fibonacciSequence.printSequence(fibonacciSequence.numbersOfFibonacciDividedBy3());
+        System.out.println("Sum of "+ fibonacciSequence.getNumberOfValues() + " elements is: " + fibonacciSequence.sumOfAllNumbers());
+        fibonacciSequence.printSequence(fibonacciSequence.getFirst4NumbersFromFibonacciArray());
+        System.out.println("Sum of last 5 elements (or less) higher than 2: " + fibonacciSequence.getSumOfLast5numbersHigherThan2());
     }
 
 }
