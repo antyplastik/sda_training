@@ -1,4 +1,4 @@
-package zad_10;
+package zad_12;
 
 public class NumberConverter {
 

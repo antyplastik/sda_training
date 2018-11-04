@@ -1,5 +1,6 @@
 package main;
 
+import Zad_10.Polidrome;
 import zad_1.Sum;
 import zad_11.Fibonacci;
 import zad_2.SumOfMultiples;
@@ -18,7 +19,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 9;
+        int numberOfExcersise = 10;
 
         switch (numberOfExcersise) {
             case 1:
@@ -49,6 +50,7 @@ public class Runner {
                 zad9();
                 break;
             case 10:
+                zad10();
                 break;
             case 11:
                 zad11();
@@ -112,6 +114,12 @@ public class Runner {
     private static void zad9(){
         Square square = new Square();
         square.printSquareToConsole(square.generateSquare(false));
+    }
+
+    private static void zad10() {
+        Polidrome polidrome = new Polidrome();
+//        System.out.println(polidrome.getNumbersOfCharsInString("Ąą Ćć Ęę Óó Źź Żż"));
+        System.out.println("Or the sentence is a polidrome: " + polidrome.sentenceIsPolidrome(""));
     }
 
     private static void zad11() {
