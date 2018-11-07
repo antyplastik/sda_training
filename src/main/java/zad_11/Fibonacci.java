@@ -20,7 +20,14 @@ public class Fibonacci {
         this.binaryConversion = false;
     }
 
-    public void setNumberOfValues(int numberOfValues) {
+    public Fibonacci(long numberOfValues) {
+        this.numberOfValues = numberOfValues;
+        this.silentMode = true;
+        this.showDependencies = false;
+        this.binaryConversion = false;
+    }
+
+    public void setNumberOfValues(long numberOfValues) {
         this.numberOfValues = numberOfValues;
     }
 
@@ -46,7 +53,7 @@ public class Fibonacci {
         return numberOfValues;
     }
 
-    public long calcFibonacciSequence() {
+    public void calcFibonacciSequence() {
         Long previous = new Long(0);
         Long actual = new Long(1);
 
@@ -67,8 +74,12 @@ public class Fibonacci {
             else
                 fibonacciArray.add(actual);
         }
+    }
 
-        return previous;
+    public List getFibonacciSequence(){
+        List tmp = new ArrayList(fibonacciArray);
+
+        return tmp;
     }
 
     public List reverseFibonacciSequence() {

@@ -12,11 +12,11 @@ public class NumberConverter {
     private int value;
 
     public NumberConverter() {
-        this.mode = 1;
+//        this.mode = 1;
     }
 
-    public NumberConverter(int mode) {
-        this.mode = mode;
+    public NumberConverter(int value) {
+        this.value = value;
     }
 
     public int getValueFromUser() {
@@ -35,7 +35,7 @@ public class NumberConverter {
         this.mode = mode;
     }
 
-    public String binaryConversionToString(int value) {
+    public String binaryConversionToString(long value) {
         if (value == 0)
             value = this.value;
 
