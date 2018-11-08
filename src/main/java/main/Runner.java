@@ -5,6 +5,7 @@ import zad_1.Sum;
 import zad_11.Fibonacci;
 import zad_12.NumberConverter;
 import zad_13.FibonacciToBIN;
+import zad_14.CircleInSquare;
 import zad_2.SumOfMultiples;
 import zad_3.Strong;
 import zad_4.StringInvertion;
@@ -21,7 +22,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 13;
+        int numberOfExcersise = 14;
 
         switch (numberOfExcersise) {
             case 1:
@@ -64,6 +65,7 @@ public class Runner {
                 zad13();
                 break;
             case 14:
+                zad14();
                 break;
             case 15:
                 break;
@@ -152,6 +154,11 @@ public class Runner {
         FibonacciToBIN fibonacci = new FibonacciToBIN();
         fibonacci.printBinarySequence(fibonacci.calcFibonacciBinarySequence());
         fibonacci.printSequence();
+    }
+
+    private static void zad14(){
+        CircleInSquare circleInSquare = new CircleInSquare();
+        circleInSquare.drawCircleInSquareToFile();
     }
 
 }
