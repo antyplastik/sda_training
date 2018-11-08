@@ -25,6 +25,12 @@ public class FibonacciToBIN {
         value = new NumberConverter();
     }
 
+    public FibonacciToBIN(long numberOfValues) {
+        this.numberOfValues = numberOfValues;
+        sequence = new Fibonacci(numberOfValues);
+        value = new NumberConverter();
+    }
+
     public List calcFibonacciBinarySequence() {
 
         sequence.calcFibonacciSequence();
@@ -39,6 +45,10 @@ public class FibonacciToBIN {
             fibonacciBinArray.add(value.binaryConversionToString(tmpVal));
         }
 
+        return fibonacciBinArray;
+    }
+
+    public List<String> getFibonacciBinArray() {
         return fibonacciBinArray;
     }
 

@@ -6,6 +6,7 @@ import zad_11.Fibonacci;
 import zad_12.NumberConverter;
 import zad_13.FibonacciToBIN;
 import zad_14.CircleInSquare;
+import zad_15.BinaryToPic;
 import zad_2.SumOfMultiples;
 import zad_3.Strong;
 import zad_4.StringInvertion;
@@ -159,6 +160,12 @@ public class Runner {
     private static void zad14(){
         CircleInSquare circleInSquare = new CircleInSquare();
         circleInSquare.drawCircleInSquareToFile();
+    }
+
+    private static void zad15() {
+        BinaryToPic pic = new BinaryToPic();
+        pic.drawFibonacci();
+        pic.saveAndUnlockPic();
     }
 
 }
