@@ -23,7 +23,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 14;
+        int numberOfExcersise = 15;
 
         switch (numberOfExcersise) {
             case 1:
@@ -69,6 +69,7 @@ public class Runner {
                 zad14();
                 break;
             case 15:
+                zad15();
                 break;
         }
     }
@@ -157,15 +158,17 @@ public class Runner {
         fibonacci.printSequence();
     }
 
-    private static void zad14(){
+    private static void zad14() {
         CircleInSquare circleInSquare = new CircleInSquare();
         circleInSquare.drawCircleInSquareToFile();
     }
 
     private static void zad15() {
+        TimeMeasurement time = new TimeMeasurement();
         BinaryToPic pic = new BinaryToPic();
         pic.drawFibonacci();
         pic.saveAndUnlockPic();
+        System.out.println("Execution time: " + time.getAformattedTime());
     }
 
 }
