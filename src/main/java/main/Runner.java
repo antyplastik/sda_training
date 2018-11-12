@@ -1,6 +1,7 @@
 package main;
 
 import Zad_10.Polidrome;
+import Zad_16.StringCalculator;
 import zad_1.Sum;
 import zad_11.Fibonacci;
 import zad_12.NumberConverter;
@@ -23,7 +24,7 @@ public class Runner {
 //        System.out.print("Podaj numer zadania: ");
 //        int numberOfExcersise = scanner.nextInt();
 
-        int numberOfExcersise = 15;
+        int numberOfExcersise = 16;
 
         switch (numberOfExcersise) {
             case 1:
@@ -71,9 +72,14 @@ public class Runner {
             case 15:
                 zad15();
                 break;
+            case 16:
+                zad16();
+                break;
+            case 17:
+                zad17();
+                break;
         }
     }
-
 
     public static void zad1() {
         Sum sum = new Sum();
@@ -172,4 +178,27 @@ public class Runner {
         time.printAformattedTime();
     }
 
+    private static void zad16() {
+        String firstStr = "makak";
+        String secondStr = "";
+        StringCalculator str = new StringCalculator(firstStr);
+
+        secondStr = "mak";
+        System.out.println(firstStr + " + " + secondStr + " = " + str.add(secondStr));
+
+        secondStr = "mak";
+        System.out.println(firstStr + " - " + secondStr + " = " + str.sub(secondStr));
+
+//        System.out.println(str.subM("bba"));
+//
+        System.out.println(str.uniq());
+//
+//        System.out.println(str.inter("aaa"));
+//
+//        System.out.println(str.dimD("aaa"));
+//        System.out.println(str.dimD("xxx"));
+    }
+
+    private static void zad17() {
+    }
 }
