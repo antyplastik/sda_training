@@ -168,7 +168,8 @@ public class Runner {
         BinaryToPic pic = new BinaryToPic();
         pic.drawFibonacci();
         pic.saveAndUnlockPic();
-        System.out.println("Execution time: " + time.getAformattedTime());
+//        System.out.println("Execution time: " + time.getAformattedTime());
+        time.printAformattedTime();
     }
 
 }

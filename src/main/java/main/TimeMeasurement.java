@@ -46,8 +46,11 @@ public class TimeMeasurement {
             tmpStr = tmpStr + " " + String.valueOf(tmp) + "[us]";
         }
 
-
         return tmpStr;
+    }
+
+    public void printAformattedTime(){
+        System.out.println("Execution time: " + getAformattedTime());
     }
 
 }
