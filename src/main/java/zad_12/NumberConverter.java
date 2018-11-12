@@ -1,5 +1,6 @@
 package zad_12;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class NumberConverter {
@@ -9,20 +10,20 @@ public class NumberConverter {
         1 - binary
      */
     private int mode = 0;
-    private int value;
+    private BigInteger value;
 
     public NumberConverter() {
 //        this.mode = 1;
     }
 
-    public NumberConverter(int value) {
+    public NumberConverter(BigInteger value) {
         this.value = value;
     }
 
-    public int getValueFromUser() {
+    public BigInteger getValueFromUser() {
         System.out.print("Type value to convert: ");
         Scanner scanner = new Scanner(System.in);
-        this.value = scanner.nextInt();
+        this.value = new BigInteger(scanner.nextLine());
 
         return value;
     }
@@ -35,24 +36,27 @@ public class NumberConverter {
         this.mode = mode;
     }
 
-    public String binaryConversionToString(long value) {
-        if (value == 0)
+    public String binaryConversionToString(BigInteger value) {
+        if (value.equals(new BigInteger("0")))
             value = this.value;
 
         String binaryValueString = "";
-        String tmp = "";
+        StringBuilder tmp = new StringBuilder();
         int strLen;
+        BigInteger two = new BigInteger("2");
+        BigInteger one = new BigInteger("1");
 //        int loopIndex = 0;
 
         do {
-            if (value % 2 == 1)
-                tmp = tmp + '1';
+            if (value.mod(two).equals(one)) // (value % 2 == 1)
+                tmp = tmp.append('1');
             else
-                tmp = tmp + '0';
+                tmp = tmp.append('0');
 
-            value = value / 2;
+//            value = value / 2;
+            value = value.divide(two);
 
-        } while (value > 0);
+        } while (value.compareTo(BigInteger.ZERO) > 0); //(value > 0);
 
         strLen = tmp.length();
 

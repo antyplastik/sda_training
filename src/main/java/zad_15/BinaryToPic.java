@@ -31,7 +31,7 @@ public class BinaryToPic {
         this.filePath = "/home/kamil/Pulpit/pliki_testowe/";
         this.fileName = "fibonacci_to_picure";
         file = new File(filePath + fileName);
-        picWidth = 100;
+        picWidth = 1000;
         picHeight = picWidth;
 
         image = new BufferedImage(picWidth, picHeight, BufferedImage.TYPE_INT_RGB); // polygon

@@ -1,5 +1,6 @@
 package zad_11;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Fibonacci {
     private boolean silentMode;
     private boolean showDependencies;
     private boolean binaryConversion;
-    private List<Long> fibonacciArray = new ArrayList<Long>();
+    private List<BigInteger> fibonacciArray = new ArrayList<BigInteger>();
 
     public Fibonacci() {
         System.out.println("===== Zad.11 =====");
@@ -54,8 +55,8 @@ public class Fibonacci {
     }
 
     public void calcFibonacciSequence() {
-        Long previous = new Long(0);
-        Long actual = new Long(1);
+        BigInteger previous = new BigInteger("0");
+        BigInteger actual = new BigInteger("1");
 
 //        NumberConverter numberConverter;
 //        if(binaryConversion == true)
@@ -65,14 +66,14 @@ public class Fibonacci {
             if (silentMode == false && showDependencies == false)
                 System.out.print(previous + " ");
             else if (showDependencies == true)
-                System.out.println(previous + " + " + actual + " = " + (previous + actual));
-            actual = previous + actual;
-            previous = actual - previous;
+                System.out.println(previous.toString() + " + " + actual.toString() + " = " + (actual));
+            actual = previous.add(actual);// previous + actual;
+            previous = actual.subtract(previous);//actual - previous;
 
             if (binaryConversion == true)
                 ;
             else
-                fibonacciArray.add(actual);
+                fibonacciArray.add(actual);//fibonacciArray.add(BigInteger.valueOf(actual));
         }
     }
 
@@ -93,7 +94,7 @@ public class Fibonacci {
         long fibonacciArraySize = fibonacciArray.size();
 
         for (int i = 0; i < fibonacciArraySize; i++) {
-            if (fibonacciArray.get(i) % 2 != 0)
+            if (fibonacciArray.get(i).mod(new BigInteger("2")).equals(BigInteger.ZERO))
                 tmpList.add(fibonacciArray.get(i));
         }
         return tmpList;
@@ -104,19 +105,20 @@ public class Fibonacci {
         long fibonacciArraySize = fibonacciArray.size();
 
         for (int i = 0; i < fibonacciArraySize; i++) {
-            if (fibonacciArray.get(i) % 3 == 0)
+            if (fibonacciArray.get(i).mod(new BigInteger("3")).equals(BigInteger.ZERO))
                 tmpList.add(fibonacciArray.get(i));
         }
         return tmpList;
     }
 
-    public long sumOfAllNumbers() {
-        List tmpList = new ArrayList(fibonacciArray);
+    public BigInteger sumOfAllNumbers() {
+        List <BigInteger> tmpList = new ArrayList(fibonacciArray);
         long tmpSize = tmpList.size();
-        long result = 0;
+        BigInteger result = new BigInteger("0");
 
         for (int i = 0; i < tmpSize; i++) {
-            result = result + ((Long) tmpList.get(i));
+//            result = result + ((Long) tmpList.get(i));
+            result = result.add(tmpList.get(i));
         }
         return result;
     }
@@ -135,25 +137,29 @@ public class Fibonacci {
         return tmpList;
     }
 
-    public long getSumOfLast5numbersHigherThan2() {
-        List<Long> tmpList = new ArrayList(fibonacciArray);
+    public BigInteger getSumOfLast5numbersHigherThan2() {
+        List<BigInteger> tmpList = new ArrayList(fibonacciArray);
         int fibonacciSize = tmpList.size();
-        long result = 0;
-        long tmp;
+        BigInteger result = new BigInteger("0");
+        BigInteger tmp;
+
+        BigInteger two = new BigInteger("2");
+
 
 //        Collections.reverse(tmpList); // reverse for fun
+
 
         if (fibonacciSize >= 5)
             for (int i = 0; i < 5; i++) {
                 tmp = tmpList.get((fibonacciSize-1) - i);
-                if (tmp > 2)
-                    result = result + tmp;
+                if (tmp.compareTo(two) == 1)
+                    result = result.add(tmp);
             }
         else if (fibonacciSize < 5)
             for (int i = 0; i < fibonacciSize; i++) {
                 tmp = tmpList.get((fibonacciSize-1) - i);
-                if (tmp > 2)
-                    result = result + tmp;
+                if (tmp.compareTo(two) == 1)
+                    result = result.add(tmp);
             }
 
 

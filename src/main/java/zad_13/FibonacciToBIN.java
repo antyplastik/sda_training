@@ -3,6 +3,7 @@ package zad_13;
 import zad_11.Fibonacci;
 import zad_12.NumberConverter;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,14 +35,14 @@ public class FibonacciToBIN {
     public List calcFibonacciBinarySequence() {
 
         sequence.calcFibonacciSequence();
-        List<Long> tmpLongList = new ArrayList(sequence.getFibonacciSequence());
+        List<BigInteger> tmpBigIntegerList = new ArrayList(sequence.getFibonacciSequence());
         fibonacciBinArray = new ArrayList<String>();
 
-        long arrLen = tmpLongList.size();
-        long tmpVal;
+        long arrLen = tmpBigIntegerList.size();
+        BigInteger tmpVal;
 
         for (int i = 0; i < arrLen; i++) {
-            tmpVal = tmpLongList.get(i);
+            tmpVal = tmpBigIntegerList.get(i);
             fibonacciBinArray.add(value.binaryConversionToString(tmpVal));
         }
 
