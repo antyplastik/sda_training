@@ -51,40 +51,25 @@ public class StringCalculator {
 
     public String uniq() { // znaki ktore sie nie powtarzaja w inputStr
         String result = "";
-//        String tmpStr = "";
         int inputStringLen = inputStr.length();
         int[] repeatedCharacters = new int[inputStringLen];
+        char inputTmpChar;
         char tmpChar;
 
         for (int i = 0; i < inputStringLen; i++) {
-            tmpChar = inputStr.charAt(i);
-
+            inputTmpChar = inputStr.charAt(i);
             for (int j = 0; j < inputStringLen; j++) {
-                if (tmpChar != inputStr.charAt(j)) {
-                    repeatedCharacters[i] = repeatedCharacters[i] + 1;
-//                    result = result + tmpChar;
-                }
+                tmpChar = inputStr.charAt(j);
+                if (inputTmpChar == tmpChar)
+                    repeatedCharacters[i]++;
             }
         }
 
-        for (int k = 0; k < inputStringLen; k++)
+        for (int k = 0; k < inputStringLen; k++) {
+            inputTmpChar = inputStr.charAt(k);
             if (repeatedCharacters[k] == 1)
-                result = result + inputStr.charAt(k);
-//
-//        int tmpStrLen = tmpStr.length();
-//
-//        for (int m = 0; m < tmpStrLen; m++) {
-//            tmpChar = tmpStr.charAt(m);
-//            for (int n = m; n < tmpStrLen; n++)
-//                if (tmpChar == tmpStr.charAt(n) && n > m)
-//                    result = result + tmpChar;
-//                    repeatedCharacters[n] = 0;
-//        }
-//        tmpStr = "";
-//
-//        for (int k = 0; k < inputStringLen; k++)
-//            if (repeatedCharacters[k] > 1)
-//                tmpStr = tmpStr + inputStr.charAt(k);
+                result = result + inputTmpChar;
+        }
 
         return result;
     }
